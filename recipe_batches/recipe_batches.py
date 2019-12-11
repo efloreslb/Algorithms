@@ -2,8 +2,21 @@
 
 import math
 
+
+
 def recipe_batches(recipe, ingredients):
-  pass 
+  max_batches = 0
+
+  for k, v in recipe.items():
+    print(k, v)
+
+  for k, v in ingredients.items():
+    print(k, v)
+
+  return max_batches 
+
+
+print(recipe_batches({ 'milk': 100, 'butter': 50, 'cheese': 10 }, { 'milk': 198, 'butter': 52, 'cheese': 10 }))
 
 
 if __name__ == '__main__':
