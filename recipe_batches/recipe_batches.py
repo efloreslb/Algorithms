@@ -3,20 +3,17 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  max_batches = 0
-
   max_arr = []
 
   for rec_item, rec_amount in recipe.items():
-    print(rec_item, rec_amount)
+    # print(rec_item, rec_amount)
 
     if rec_item in ingredients:
-      print(f'rec_item: {rec_item}: {ingredients[rec_item]}')
+      # print(f'rec_item: {rec_item}: {ingredients[rec_item]}')
       max_arr.append(ingredients[rec_item] / rec_amount)
 
     else: 
       max_arr.append(0)
-
 
       # if rec_amount > ingredients[rec_item]:
       #   print("yes")
@@ -25,13 +22,8 @@ def recipe_batches(recipe, ingredients):
     #   print(ing_item, ing_amount)
     #   if ingredients.includes()
 
-  print(f'MAX_ARR: {max_arr}')
-  print(int(min(max_arr)))
-
-  # for k, v in ingredients.items():
-  #   print(k, v)
-
-  # return f'MAX_BATCH: {max_batches}'
+  # print(f'MAX_ARR: {max_arr}')
+  # print(int(min(max_arr)))
 
   return int(min(max_arr))
 

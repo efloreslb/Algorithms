@@ -5,8 +5,32 @@ import sys
 # The cache parameter is here for if you want to implement
 # a solution that is more efficient than the naive 
 # recursive solution
+# from functools import lru_cache
+
+# @lru_cache(maxsize=100)
+
+cache = {}
+
 def eating_cookies(n, cache=None):
-  pass
+
+  if n in cache.keys():
+    return cache[n]
+
+  if n < 0:
+    return 0
+  if n <= 1:
+    return 1
+
+  result = eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
+  cache[n] = result
+  return result
+
+
+# eating_cookies(0)
+# eating_cookies(1)
+# eating_cookies(2)
+print(eating_cookies(5))
+# eating_cookies(10)
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
