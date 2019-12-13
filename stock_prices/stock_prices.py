@@ -13,20 +13,13 @@ def find_max_profit(prices):
       sm_index = n
       print(f'smallest: [{sm_index}] - {prices[sm_index]}')
 
-      # print(f'sliced: {prices[-1:][0]}')
-
-      # if prices[-1:][0] == prices[sm_index]:
-      #   max_profit = 0 - prices[sm_index]
-      # else:
       for i in range(sm_index + 1, len(prices) - 1):
+        print(range(sm_index + 1, len(prices) - 1))
         print(f'i: [{i}] - {prices[i]}')
         if prices[i] - prices[sm_index] > max_profit:
           print(f'prev_max: {max_profit}')
           max_profit = prices[i] - prices[sm_index]
           print(f'cur_max: {max_profit}')
-    
-    # if prices[n] > prices[lg_index]:
-    #   lg_index = n
 
   return max_profit
 
